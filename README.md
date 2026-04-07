@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://gw.alipayobjects.com/zos/k/2h/waza.svg" width="120" />
   <h1>Waza</h1>
-  <p><b>Engineering habits you already know, turned into skills Claude can run.</b></p>
+  <p><b>Engineering habits you already know, turned into skills coding agents can run.</b></p>
   <a href="https://github.com/tw93/Waza/stargazers"><img src="https://img.shields.io/github/stars/tw93/Waza?style=flat-square" alt="Stars"></a>
   <a href="https://github.com/tw93/Waza/releases"><img src="https://img.shields.io/github/v/tag/tw93/Waza?label=version&style=flat-square" alt="Version"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
@@ -16,11 +16,20 @@ Waza (技) is a Japanese martial arts term for technique: a move practiced until
 
 A good engineer does not just write code. They think through requirements, review their own work, debug systematically, design interfaces that feel intentional, and read primary sources. They write clearly, and learn new domains by producing output, not consuming content.
 
-AI makes you faster. It does not make you think more clearly, ship more carefully, or understand more deeply. Waza turns each of these habits into a skill Claude can execute.
+AI makes you faster. It does not make you think more clearly, ship more carefully, or understand more deeply. Waza turns each of these habits into a skill your coding agent can execute.
 
 <img src="https://gw.alipayobjects.com/zos/k/qa/waza_repaired_v4.svg" width="800" />
 
-## Skills
+## Platforms
+
+Waza now ships in two runtime variants. Pick the one that matches your host:
+
+| Platform | Entry | Includes | Notes |
+| :--- | :--- | :--- | :--- |
+| Claude Code | This root directory | 8 Claude Code skills, statusline, English coaching template | Primary runtime, full repo surface. |
+| OpenCode | [`opencode/README.md`](opencode/README.md) | 8 OpenCode skills, capability matrix, OpenCode-specific docs/scripts | Core skills are migrated. Some extras are fallback-only until OpenCode exposes stable hooks. |
+
+## Claude Code
 
 Each engineering habit gets a [Claude Code skill](https://docs.anthropic.com/en/docs/claude-code/skills). Type the slash command, Claude follows the playbook.
 
@@ -76,6 +85,16 @@ npx skills add tw93/Waza -a claude-code -s health -y
 ```
 
 Replace `health` with any skill name. Requires Node 18+ and Claude Code.
+
+## OpenCode
+
+OpenCode assets live under [`opencode/`](opencode/). Start there for install steps, skill list, capability notes, and documented downgrade points.
+
+```bash
+bash opencode/install.sh
+```
+
+OpenCode today supports the eight core skills. Statusline and English coaching are provided as manual templates because this repo does not yet claim a verified first-class OpenCode injection point for them.
 
 ## Background
 

@@ -1,10 +1,12 @@
 # AI Assistant Configuration
 .claude/
+.opencode/
 .agent/
 .agents/
 .qoder/
 AGENTS.md
 skills-lock.json
+.worktrees/
 
 # macOS
 .DS_Store
